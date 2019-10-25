@@ -1,0 +1,7 @@
+#2. Write a script which updates all the package sources, then all the packages, and then
+#ilogs everything in a file named /var/log/update_script.log. Create a scheduled
+#task for this script, once per week at 4 AM.
+
+echo 'LOGFILE=/var/log/update_script.log && apt-get update >> $LOGFILE && apt-get upgrade >> $LOGFILE' > ~/update.sh
+
+echo '0 4 * * 1 ~/update.sh\n' >> /etc/crontab

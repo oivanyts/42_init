@@ -1,0 +1,4 @@
+# 19. With the previous command, forbid all others
+
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP

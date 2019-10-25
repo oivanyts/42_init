@@ -1,0 +1,14 @@
+# 4. Write a script which monitors the modifications made to the /etc/crontab file and sends an e-mail to root if the file is modified. Create a scheduled task to run this script everyday at midnight.
+echo "if [ -f ~/.md5hashSum ]" >> ~/bin/script4.sh
+echo "then" >> ~/bin/script4.sh
+echo "if ! md5sum -c ~/.md5hashSum" >> ~/bin/script4.sh
+echo "then" >> ~/bin/script4.sh
+echo "echo '/etc/crontab was modificated/' | mail -s 'File modification' root" >> ~/bin/script4.sh
+echo "md5sum ~/testFile > ~/.md5hashSum" >> ~/bin/script4.sh
+echo "fi" >> ~/bin/script4.sh
+echo "else" >> ~/bin/script4.sh
+echo "md5sum ~/testFile > ~/.md5hashSum" >> ~/bin/script4.sh
+echo "fi &> /dev/null" >> ~/bin/script4.sh
+
+echo '@midnight ~/bin/script4.sh' >> /etc/crontab
+

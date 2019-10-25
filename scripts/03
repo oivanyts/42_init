@@ -1,0 +1,10 @@
+#3. Write a script which displays the list of files from the folder given as parameter, sorted by size.
+
+
+
+if [ -d  $1 ]
+then
+	ls -lSh $1
+else
+	echo 'not a folder'
+fi

@@ -1,0 +1,5 @@
+#1. Write a script which displays only the login, UID and Path of each entry of the /etc/passwd file.
+
+
+
+awk -F: '{print "login: "$1"\nUID: "$3"\npath: "$6}' /etc/passwd

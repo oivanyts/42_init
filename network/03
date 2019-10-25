@@ -1,0 +1,3 @@
+# 3. Identify the MAC address of the Bluetooth PAN
+
+networksetup -getmacaddress en4 | awk '{print $3}'
